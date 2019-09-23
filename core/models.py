@@ -19,6 +19,7 @@ class About(models.Model):
 class Service(models.Model):
     name = models.CharField(max_length=100, verbose_name="Service name")
     description = models.TextField(verbose_name="About service")
+    icon = models.CharField(max_length=250,verbose_name="Devicon")
 
     def __str__(self):
         return self.name
@@ -27,7 +28,7 @@ class Service(models.Model):
 # Recent Work Model
 class RecentWork(models.Model):
     title = models.CharField(max_length=100, verbose_name="Work title")
-    image = models.ImageField(upload_to="works")
+    image = models.ImageField(upload_to="works",default="default.png")
 
     def __str__(self):
         return self.title
